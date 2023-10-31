@@ -2,3 +2,5 @@ notes
 test.c
 .vscode
 dev_functions.c
+push_swap
+*.o
