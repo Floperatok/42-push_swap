@@ -6,12 +6,13 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:34:59 by nsalles           #+#    #+#             */
-/*   Updated: 2023/10/29 17:24:34 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/10/31 14:36:47 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+// Shift all down all the nodes by one, the last node become the first one
 void	rra(t_list **lst_a)
 {
 	t_list	*node;
@@ -32,6 +33,7 @@ void	rra(t_list **lst_a)
 		ft_printf("error rra\n");
 }
 
+// Shift all down all the nodes by one, the last node become the first one
 void	rrb(t_list **lst_b)
 {
 	t_list	*node;
@@ -52,6 +54,7 @@ void	rrb(t_list **lst_b)
 		ft_printf("error rrb\n");
 }
 
+// Shift all down all the nodes by one, the last node become the first one
 void	rrr(t_list **lst_a, t_list **lst_b)
 {
 	t_list	*node;

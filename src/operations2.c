@@ -6,12 +6,13 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 15:10:45 by nsalles           #+#    #+#             */
-/*   Updated: 2023/10/29 17:24:49 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/10/31 14:36:35 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+// Shift up all nodes of stack by one, the first node become the last one
 void	ra(t_list **lst_a)
 {
 	t_list	*tmp;
@@ -27,6 +28,7 @@ void	ra(t_list **lst_a)
 		ft_printf("error ra\n");
 }
 
+// Shift up all nodes of stack by one, the first node become the last one
 void	rb(t_list **lst_b)
 {
 	t_list	*tmp;
@@ -41,7 +43,7 @@ void	rb(t_list **lst_b)
 	else
 		ft_printf("error rb\n");
 }
-
+// Shift up all nodes of stack by one, the first node become the last one
 void	rr(t_list **lst_a, t_list **lst_b)
 {
 	t_list	*tmp;

@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:45:45 by nsalles           #+#    #+#             */
-/*   Updated: 2023/10/31 06:02:20 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/10/31 14:21:59 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,13 @@ typedef struct s_list
 }					t_list;
 
 // Sort functions
+
 int		ft_bubblesort(t_list **lst_a, t_list **lst_b);
 
 // List functions
-int		lstsize(t_list *lst);
+
+int		lstmin(t_list *node);
+int		lstsize(t_list *node);
 int		lstissorted(t_list *node);
 t_list	*lstnew(int content);
 void	lstadd_back(t_list **lst, t_list *new);
@@ -34,6 +37,7 @@ void	lstadd_front(t_list **lst, t_list *new);
 void	lstclear(t_list **lst);
 
 // Operations functions
+
 void	sa(t_list **lst_a);
 void	sb(t_list **lst_b);
 void	ss(t_list **lst_a, t_list **lst_b);
@@ -47,9 +51,11 @@ void	rrb(t_list **lst_b);
 void	rrr(t_list **lst_a, t_list **lst_b);
 
 // Miscellaneous functions
+
 int		ft_atoi(char *nptr);
 
 // Dev functions (delete before pushing)
+
 void	lstprint(t_list **lst_a, t_list **lst_b);
 
 #endif
