@@ -4,3 +4,4 @@ test.c
 dev_functions.c
 push_swap
 *.o
+checker_linux
