@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:08:00 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/01 13:20:51 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/01 18:31:30 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void	lstadd_back(t_list **lst, t_list *new)
 	t_list	*tmp;
 
 	new->next = NULL;
+	if (!new)
+		return ;
 	if (!*lst)
 	{
 		*lst = new;
@@ -52,13 +54,11 @@ void	lstadd_back(t_list **lst, t_list *new)
 	tmp->next = new;
 }
 
-// Create a new node, returns NULL if content isn't in integer value range
-t_list	*lstnew(long content)
+// Create a new node
+t_list	*lstnew(int content)
 {
 	t_list	*new;
 
-	if (content > 2147483647 || content < -2147483648)
-		return (NULL);
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);

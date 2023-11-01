@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 15:22:45 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/01 13:19:00 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/01 18:52:34 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int	ft_isdigit(int c)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
+	return (c >= 48 && c <= 57);
 }
 
 int	is_wspace(char c)

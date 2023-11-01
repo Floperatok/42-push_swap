@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:45:45 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/01 13:19:32 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/01 18:34:08 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ void	ft_rotatesort(t_list **lst_a, t_list **lst_b);
 
 int		lstmin(t_list *node);
 int		lstsize(t_list *node);
+int		is_inlst(t_list *node, int content);
 int		lstissorted(t_list *node);
-t_list	*lstnew(long content);
+t_list	*lstnew(int content);
 void	lstadd_back(t_list **lst, t_list *new);
 void	lstadd_front(t_list **lst, t_list *new);
 void	lstclear(t_list **lst);

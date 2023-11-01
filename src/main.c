@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:43:53 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/01 13:10:27 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/01 20:37:53 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ int	main(int ac, char **av)
 		ft_printf("Error\n");
 		return (0);
 	}
-	lstprint(lst_a, lst_b);
+	ft_rotatesort(lst_a, lst_b);
 	return (lstclear(lst_a), lstclear(lst_b), 0);
 }

@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 05:40:10 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/01 05:41:00 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/01 20:35:42 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,16 @@ int	lstsize(t_list *node)
 		i++;
 	}
 	return (i);
+}
+
+// Return 1 if the content is found in the list following the node, 0 otherwise
+int	is_inlst(t_list *node, int content)
+{
+	while (node)
+	{
+		if (node->content == content)
+			return (1);
+		node = node->next;
+	}
+	return (0);
 }
