@@ -9,8 +9,10 @@ CFLAGS	=	-Wall -Werror -Wextra -g # get rid of the -g before pushing
 
 # Files
 SRCS	=	src/main.c \
+			src/init.c \
 			src/utils.c \
 			src/list_utils.c \
+			src/list_utils2.c \
 			src/operations1.c \
 			src/operations2.c \
 			src/operations3.c \

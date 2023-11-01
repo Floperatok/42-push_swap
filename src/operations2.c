@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 15:10:45 by nsalles           #+#    #+#             */
-/*   Updated: 2023/10/31 14:36:35 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/01 05:36:45 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	rb(t_list **lst_b)
 	else
 		ft_printf("error rb\n");
 }
+
 // Shift up all nodes of stack by one, the first node become the last one
 void	rr(t_list **lst_a, t_list **lst_b)
 {

@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:45:45 by nsalles           #+#    #+#             */
-/*   Updated: 2023/10/31 14:21:59 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/01 08:44:05 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ typedef struct s_list
 
 // Sort functions
 
-int		ft_bubblesort(t_list **lst_a, t_list **lst_b);
+void	ft_rotatesort(t_list **lst_a, t_list **lst_b);
+void	ft_bubblesort(t_list **lst_a, t_list **lst_b);
 
 // List functions
 
@@ -52,7 +53,12 @@ void	rrr(t_list **lst_a, t_list **lst_b);
 
 // Miscellaneous functions
 
+int		ft_isdigit(int c);
+int		is_whitespace(char c);
+int		has_whitespaces(char *str);
 int		ft_atoi(char *nptr);
+t_list	**fill_lst_multiple_args(t_list **lst, char **av, int ac);
+t_list	**fill_lst_onearg(t_list **lst, char **av, int ac);
 
 // Dev functions (delete before pushing)
 
