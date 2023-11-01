@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 15:22:45 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/01 08:43:29 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/01 13:19:00 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-int	is_whitespace(char c)
+int	is_wspace(char c)
 {
 	return ((c >= 9 && c <= 13) || c == 32);
 }
@@ -31,17 +31,17 @@ int	has_whitespaces(char *str)
 
 	i = -1;
 	while (str[++i])
-		if (is_whitespace(str[i]))
+		if (is_wspace(str[i]))
 			return (1);
 	return (0);
 }
 
-// Convert digit in string into int
-int	ft_atoi(char *nptr)
+// Convert a string to an int, if max or min int is depassed returns maxint+1
+long	ft_atoi(char *nptr)
 {
-	int	i;
-	int	sign;
-	int	result;
+	int		i;
+	int		sign;
+	long	result;
 
 	i = 0;
 	sign = 1;
@@ -49,16 +49,13 @@ int	ft_atoi(char *nptr)
 	while ((nptr[i] && (nptr[i] >= 9 && nptr[i] <= 13)) || nptr[i] == 32)
 		i++;
 	if (nptr[i] == '+' || nptr[i] == '-')
-	{
-		if (nptr[i] == '-')
+		if (nptr[i++] == '-')
 			sign *= -1;
-		i++;
-	}
 	while (ft_isdigit(nptr[i]))
 	{
-		result = result * 10 + (nptr[i] - '0');
-		i++;
+		result = result * 10 + (nptr[i++] - '0');
+		if (result * sign > 2147483647 || result * sign < -2147483648)
+			return (2147483648);
 	}
-	result *= sign;
-	return (result);
+	return (result * sign);
 }

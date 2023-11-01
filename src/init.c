@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:03:29 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/01 12:04:18 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/01 13:20:22 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_list	**fill_lst_multiple_args(t_list **lst, char **av, int ac)
 	{
 		j = -1;
 		while (av[i][++j])
-			if (!ft_isdigit(av[i][j]))
+			if (!ft_isdigit(av[i][j]) && av[i][j] != '-')
 				return (lstclear(lst), NULL);
 		tmp = lstnew(ft_atoi(av[i--]));
 		if (!tmp)
@@ -42,11 +42,11 @@ t_list	**fill_lst_onearg(t_list **lst, char **av, int ac)
 		return (NULL);
 	i = -1;
 	while (av[1][++i])
-		if (!ft_isdigit(av[1][i]) && !is_whitespace(av[1][i]))
+		if (!ft_isdigit(av[1][i]) && !is_wspace(av[1][i]) && av[1][i] != '-')
 			return (lstclear(lst), NULL);
 	while (*av[1])
 	{
-		while (*av[1] && is_whitespace(*av[1]))
+		while (*av[1] && is_wspace(*av[1]))
 			av[1]++;
 		if (*av[1])
 		{
@@ -55,7 +55,7 @@ t_list	**fill_lst_onearg(t_list **lst, char **av, int ac)
 				return (lstclear(lst), NULL);
 			lstadd_back(lst, tmp);
 		}
-		while (*av[1] && !is_whitespace(*av[1]))
+		while (*av[1] && !is_wspace(*av[1]))
 			av[1]++;
 	}
 	return (lst);
