@@ -6,28 +6,14 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:08:00 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/01 18:31:30 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/05 15:38:09 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-// Check if the chained list following the node is sorted by ascending order
-int	lstissorted(t_list *node)
-{
-	if (!node)
-		return (1);
-	while (node->next)
-	{
-		if (node->next->content < node->content)
-			return (0);
-		node = node->next;
-	}
-	return (1);
-}
-
 // Add a node to the front of the chained list
-void	lstadd_front(t_list **lst, t_list *new)
+void	lstadd_front(t_stack **lst, t_stack *new)
 {
 	if (!new || !lst)
 		return ;
@@ -36,9 +22,9 @@ void	lstadd_front(t_list **lst, t_list *new)
 }
 
 // Add a node to the back of the chained list
-void	lstadd_back(t_list **lst, t_list *new)
+void	lstadd_back(t_stack **lst, t_stack *new)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 
 	new->next = NULL;
 	if (!new)
@@ -55,22 +41,25 @@ void	lstadd_back(t_list **lst, t_list *new)
 }
 
 // Create a new node
-t_list	*lstnew(int content)
+t_stack	*lstnew(int content)
 {
-	t_list	*new;
+	t_stack	*new;
 
-	new = (t_list *)malloc(sizeof(t_list));
+	new = (t_stack *)malloc(sizeof(t_stack));
 	if (!new)
 		return (NULL);
 	new->content = content;
+	new->index = 0;
+	new->cost_a = -1;
+	new->cost_b = -1;
 	new->next = NULL;
 	return (new);
 }
 
 // Clear and free all the chained list
-void	lstclear(t_list **lst)
+void	lstclear(t_stack **lst)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 
 	if (!lst)
 		return ;
@@ -82,4 +71,13 @@ void	lstclear(t_list **lst)
 		*lst = tmp;
 	}
 	lst = NULL;
+}
+
+t_stack	*lstlast(t_stack *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

@@ -3,32 +3,50 @@
 _GREEN=$'\033[0;32m
 
 # Compilation
-NAME	=	push_swap
-CC		=	cc
-CFLAGS	=	-Wall -Werror -Wextra -g # get rid of the -g before pushing
+CC			=	cc
+CFLAGS		=	-Wall -Werror -Wextra -g # get rid of the -g before pushing
+NAME		=	push_swap
+
+SRC_PATH	=	src/
+OBJ_PATH	=	obj/
 
 # Files
-SRCS	=	src/main.c \
-			src/init.c \
-			src/utils.c \
-			src/list_utils.c \
-			src/list_utils2.c \
-			src/operations1.c \
-			src/operations2.c \
-			src/operations3.c \
-			lib/ft_printf/ft_printf.c \
-			lib/ft_printf/ft_printf2.c \
-			./dev_functions.c # delete this one before pushing
-OBJECTS	=	$(SRCS:.c=.o)
+SRC		=	main.c \
+		initialization.c \
+		utils.c \
+		ft_split.c \
+		list_utils.c \
+		list_utils2.c \
+		operations1.c \
+		operations2.c \
+		operations3.c \
+		sort_utils.c \
+		sort.c \
+		target.c \
+		moves.c \
+		ft_printf.c \
+		ft_printf2.c \
+		dev_functions.c # delete this one before pushing
+
+SRCS	=	$(addprefix $(SRC_PATH), $(SRC))
+OBJ		=	$(SRC:.c=.o)
+OBJS	=	$(addprefix $(OBJ_PATH), $(OBJ))
+INCS	=	-I ./includes/
 
 
-all:	$(NAME) success
+all:	$(OBJ_PATH) $(NAME) success
 
-$(NAME): $(OBJECTS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJECTS)
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c
+	$(CC) $(CFLAGS) -c $< -o $@ $(INCS)
+
+$(OBJ_PATH):
+	@mkdir $(OBJ_PATH)
+
+$(NAME): $(OBJS)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) 
 
 clean:
-	rm -f $(OBJECTS)
+	rm -rf $(OBJ_PATH)
 
 fclean:	clean
 	rm -f $(NAME)
@@ -36,6 +54,6 @@ fclean:	clean
 re: fclean all
 
 success:
-	@echo "${_GREEN}*-----------------------------------*"
+	@echo "${_GREEN}+-----------------------------------+"
 	@echo "${_GREEN}|      COMPILATION SUCCESSFUL       |"
-	@echo "${_GREEN}*-----------------------------------*"
+	@echo "${_GREEN}+-----------------------------------+"

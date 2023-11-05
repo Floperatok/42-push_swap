@@ -6,16 +6,16 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 15:10:45 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/01 05:36:45 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/04 13:52:27 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 // Shift up all nodes of stack by one, the first node become the last one
-void	ra(t_list **lst_a)
+void	ra(t_stack **lst_a)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 
 	if (*lst_a && (*lst_a)->next)
 	{
@@ -29,9 +29,9 @@ void	ra(t_list **lst_a)
 }
 
 // Shift up all nodes of stack by one, the first node become the last one
-void	rb(t_list **lst_b)
+void	rb(t_stack **lst_b)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 
 	if (*lst_b && (*lst_b)->next)
 	{
@@ -45,9 +45,9 @@ void	rb(t_list **lst_b)
 }
 
 // Shift up all nodes of stack by one, the first node become the last one
-void	rr(t_list **lst_a, t_list **lst_b)
+void	rr(t_stack **lst_a, t_stack **lst_b)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 
 	if (*lst_a && *lst_b)
 	{

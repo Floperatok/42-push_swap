@@ -6,16 +6,16 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 16:23:32 by nsalles           #+#    #+#             */
-/*   Updated: 2023/10/31 04:37:49 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/04 13:52:19 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 // Exchange the two firts elements of a
-void	sa(t_list **lst_a)
+void	sa(t_stack **lst_a)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 
 	tmp = NULL;
 	if ((*lst_a) && (*lst_a)->next)
@@ -32,9 +32,9 @@ void	sa(t_list **lst_a)
 }
 
 // Exchange the two firts elements of b
-void	sb(t_list **lst_b)
+void	sb(t_stack **lst_b)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 
 	tmp = NULL;
 	if ((*lst_b) && (*lst_b)->next)
@@ -51,9 +51,9 @@ void	sb(t_list **lst_b)
 }
 
 // Exchange the two firts elements of a and b
-void	ss(t_list **lst_a, t_list **lst_b)
+void	ss(t_stack **lst_a, t_stack **lst_b)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 
 	if ((*lst_a) && (*lst_a)->next && (*lst_b) && (*lst_b)->next)
 	{
@@ -72,15 +72,14 @@ void	ss(t_list **lst_a, t_list **lst_b)
 }
 
 // Push from b to a
-void	pa(t_list **lst_a, t_list **lst_b)
+void	pa(t_stack **lst_a, t_stack **lst_b)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 
 	if ((*lst_b))
 	{
-		lstadd_front(lst_a, lstnew((*lst_b)->content));
 		tmp = (*lst_b)->next;
-		free((*lst_b));
+		lstadd_front(lst_a, (*lst_b));
 		*lst_b = tmp;
 		ft_printf("pa\n");
 	}
@@ -89,15 +88,14 @@ void	pa(t_list **lst_a, t_list **lst_b)
 }
 
 // Push from a to b
-void	pb(t_list **lst_a, t_list **lst_b)
+void	pb(t_stack **lst_a, t_stack **lst_b)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 
 	if ((*lst_a))
 	{
-		lstadd_front(lst_b, lstnew((*lst_a)->content));
 		tmp = (*lst_a)->next;
-		free((*lst_a));
+		lstadd_front(lst_b, (*lst_a));
 		*lst_a = tmp;
 		ft_printf("pb\n");
 	}

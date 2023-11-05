@@ -6,14 +6,14 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 05:40:10 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/01 20:35:42 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/04 13:52:09 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 // Return the pos of the minimum content in the chained list following the node
-int	lstmin(t_list *node)
+int	lstmin(t_stack *node)
 {
 	int	index;
 	int	i;
@@ -38,7 +38,7 @@ int	lstmin(t_list *node)
 }
 
 // Return the size of the chained list following the node
-int	lstsize(t_list *node)
+int	lstsize(t_stack *node)
 {
 	int	i;
 
@@ -52,7 +52,7 @@ int	lstsize(t_list *node)
 }
 
 // Return 1 if the content is found in the list following the node, 0 otherwise
-int	is_inlst(t_list *node, int content)
+int	is_inlst(t_stack *node, int content)
 {
 	while (node)
 	{

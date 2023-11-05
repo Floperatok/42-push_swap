@@ -6,17 +6,17 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:34:59 by nsalles           #+#    #+#             */
-/*   Updated: 2023/10/31 14:36:47 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/04 13:52:35 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 // Shift all down all the nodes by one, the last node become the first one
-void	rra(t_list **lst_a)
+void	rra(t_stack **lst_a)
 {
-	t_list	*node;
-	t_list	*tmp;
+	t_stack	*node;
+	t_stack	*tmp;
 
 	if (*lst_a && (*lst_a)->next)
 	{
@@ -34,10 +34,10 @@ void	rra(t_list **lst_a)
 }
 
 // Shift all down all the nodes by one, the last node become the first one
-void	rrb(t_list **lst_b)
+void	rrb(t_stack **lst_b)
 {
-	t_list	*node;
-	t_list	*tmp;
+	t_stack	*node;
+	t_stack	*tmp;
 
 	if (*lst_b && (*lst_b)->next)
 	{
@@ -55,10 +55,10 @@ void	rrb(t_list **lst_b)
 }
 
 // Shift all down all the nodes by one, the last node become the first one
-void	rrr(t_list **lst_a, t_list **lst_b)
+void	rrr(t_stack **lst_a, t_stack **lst_b)
 {
-	t_list	*node;
-	t_list	*tmp;
+	t_stack	*node;
+	t_stack	*tmp;
 
 	if (*lst_a && (*lst_a)->next && *lst_b && (*lst_b)->next)
 	{
