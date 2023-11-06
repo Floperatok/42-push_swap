@@ -6,11 +6,11 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:17:40 by nsalles           #+#    #+#             */
-/*   Updated: 2023/10/28 15:50:27 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/06 00:47:16 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 int	ft_putchar(int c)
 {

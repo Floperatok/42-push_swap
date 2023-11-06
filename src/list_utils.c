@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:08:00 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/05 15:38:09 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/06 00:57:20 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,16 @@ void	lstclear(t_stack **lst)
 	lst = NULL;
 }
 
-t_stack	*lstlast(t_stack *lst)
+// Return the size of the chained list following the node
+int	lstsize(t_stack *node)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	int	i;
+
+	i = 0;
+	while (node)
+	{
+		node = node->next;
+		i++;
+	}
+	return (i);
 }

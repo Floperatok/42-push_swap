@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:43:53 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/06 00:26:01 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/06 13:10:21 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,8 @@ int	main(int ac, char **av)
 		return (0);
 	}
 	lst_b = NULL;
-
 	if (!lstissorted(lst_a))
 		quick_sort(&lst_a, &lst_b);
-	// lstprint(&lst_a, &lst_b);
+	lstprint(&lst_a, &lst_b);
 	return (lstclear(&lst_a), lstclear(&lst_b), 0);
 }

@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:51:52 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/05 23:21:46 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/06 12:23:41 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,57 @@ int	lstissorted(t_stack *node)
 		node = node->next;
 	}
 	return (1);
+}
+
+static int	find_highest_pos(t_stack *node)
+{
+	int	highest;
+	int	pos;
+	int	i;
+
+	pos = 0;
+	highest = node->index;
+	i = 0;
+	while (node)
+	{
+		if (highest < node->index)
+		{
+			highest = node->index;
+			pos = i;
+		}
+		i++;
+		node = node->next;
+	}
+	return (pos);
+}
+
+// Sort in less than three step the chained list of size 3 or below
+void	tiny_sort(t_stack **lst_a)
+{
+	int	size;
+	int	highest_pos;
+
+	size = lstsize(*lst_a);
+	if (size > 3 || size < 2)
+	{
+		ft_printf("error size is not 2 or 3\n");
+		return ;
+	}
+	highest_pos = find_highest_pos(*lst_a);
+	if (size == 2)
+	{
+		if (!lstissorted(*lst_a))
+			sa(lst_a);
+	}
+	else
+	{
+		if (highest_pos == 0)
+			ra(lst_a);
+		else if (highest_pos == 1)
+			rra(lst_a);
+		if ((*lst_a)->index > (*lst_a)->next->index)
+			sa(lst_a);
+	}
 }
 
 // Compute the number of moves b needed to perfectly store the node in a
@@ -61,27 +112,3 @@ void	compute_all_costs(t_stack **lst_a, t_stack **lst_b)
 		tmp = tmp->next;
 	}
 }
-
-// void	bubble_sort(int *tab, int size)
-// {
-// 	int	i;
-// 	int	j;
-// 	int cmp;
-
-// 	if (!tab || size == 0)
-// 		return ;
-// 	i = 0;
-// 	while (++i < size)
-// 	{
-// 		j = -1;
-// 		while (++j < size - i)
-// 		{
-// 			if (tab[j] > tab[j + 1])
-// 			{
-// 				cmp = tab[j];
-// 				tab[j] = tab[j + 1];
-// 				tab[j + 1] = cmp;
-// 			}
-// 		}
-// 	}
-// }

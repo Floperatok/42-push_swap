@@ -6,19 +6,19 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:45:45 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/06 00:36:23 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/06 13:09:30 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../src/ft_printf.h"
+# include "./ft_printf.h"
 # include <stdlib.h>
 # include <limits.h>
 
 # ifndef CUTTING
-#  define CUTTING 1
+#  define CUTTING 4
 # endif
 
 typedef struct s_list
@@ -32,7 +32,7 @@ typedef struct s_list
 
 // Sort functions
 
-void	sort_in_three(t_stack **lst_a);
+void	tiny_sort(t_stack **lst_a);
 void	quick_sort(t_stack **lst_a, t_stack **lst_b);
 void	compute_all_costs(t_stack **lst_a, t_stack **lst_b);
 void	do_moves(t_stack **lst_a, t_stack **lst_b, int *costs);
@@ -41,12 +41,9 @@ void	final_rotation(t_stack **lst_a);
 
 // List functions
 
-int		lstmin(t_stack *node);
 int		lstsize(t_stack *node);
-int		is_inlst(t_stack *node, int content);
 int		lstissorted(t_stack *node);
 t_stack	*lstnew(int content);
-t_stack	*lstlast(t_stack *lst);
 void	lstadd_back(t_stack **lst, t_stack *new);
 void	lstadd_front(t_stack **lst, t_stack *new);
 void	lstclear(t_stack **lst);
@@ -78,7 +75,7 @@ char	*ft_strdup(char *s);
 void	free_tab(char **tab);
 char	**ft_split(char const *s, char c);
 
-// Dev functions (delete before pushing)
+// Dev functions
 
 void	lstprint(t_stack **lst_a, t_stack **lst_b);
 

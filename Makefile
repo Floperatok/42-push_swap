@@ -4,7 +4,7 @@ _GREEN=$'\033[0;32m
 
 # Compilation
 CC			=	cc
-CFLAGS		=	-Wall -Werror -Wextra -g # get rid of the -g before pushing
+CFLAGS		=	-Wall -Werror -Wextra
 NAME		=	push_swap
 
 SRC_PATH	=	src/
@@ -14,9 +14,9 @@ OBJ_PATH	=	obj/
 SRC		=	main.c \
 		initialization.c \
 		utils.c \
+		utils2.c \
 		ft_split.c \
 		list_utils.c \
-		list_utils2.c \
 		operations1.c \
 		operations2.c \
 		operations3.c \
@@ -26,7 +26,7 @@ SRC		=	main.c \
 		moves.c \
 		ft_printf.c \
 		ft_printf2.c \
-		dev_functions.c # delete this one before pushing
+		dev_functions.c
 
 SRCS	=	$(addprefix $(SRC_PATH), $(SRC))
 OBJ		=	$(SRC:.c=.o)

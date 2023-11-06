@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 22:25:12 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/05 23:45:07 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/06 00:49:18 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,3 @@ int	get_target_pos(int index, t_stack **lst_a)
 		return (pos);
 	return (get_maxindex_pos(lst_a));
 }
-

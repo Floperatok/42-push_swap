@@ -2,7 +2,7 @@ import random
 
 def generate():
     numbers = set()
-    while len(numbers) < 5:
+    while len(numbers) < 100:
         numbers.add(random.randint(100, 999))
     return list(numbers)
 
