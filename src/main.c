@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:43:53 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/07 14:18:55 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/07 14:25:45 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,5 @@ int	main(int ac, char **av)
 	lst_b = NULL;
 	if (!lstissorted(lst_a))
 		quick_sort(&lst_a, &lst_b);
-	lstprint(&lst_a, &lst_b);
 	return (lstclear(&lst_a), lstclear(&lst_b), 0);
 }
