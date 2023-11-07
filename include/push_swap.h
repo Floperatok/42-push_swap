@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:45:45 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/06 13:09:30 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/07 14:10:36 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,6 @@
 # include "./ft_printf.h"
 # include <stdlib.h>
 # include <limits.h>
-
-# ifndef CUTTING
-#  define CUTTING 4
-# endif
 
 typedef struct s_list
 {
@@ -34,9 +30,12 @@ typedef struct s_list
 
 void	tiny_sort(t_stack **lst_a);
 void	quick_sort(t_stack **lst_a, t_stack **lst_b);
+void	pre_sort(t_stack **lst_a, t_stack **lst_b, int size, int cut);
+void	regroup(t_stack **lst_a, t_stack **lst_b);
 void	compute_all_costs(t_stack **lst_a, t_stack **lst_b);
-void	do_moves(t_stack **lst_a, t_stack **lst_b, int *costs);
 int		get_target_pos(int index, t_stack **lst_a);
+int		get_maxindex_pos(t_stack **lst);
+void	do_moves(t_stack **lst_a, t_stack **lst_b, int *costs);
 void	final_rotation(t_stack **lst_a);
 
 // List functions

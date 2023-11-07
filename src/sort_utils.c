@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:51:52 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/06 12:23:41 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/07 13:43:23 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,8 @@ void	tiny_sort(t_stack **lst_a)
 // Compute the number of moves b needed to perfectly store the node in a
 static void	compute_cost(t_stack *node, int pos, int size_b, t_stack **lst_a)
 {
-	int	target_pos;
 	int	size_a;
+	int	target_pos;
 
 	if (pos > size_b / 2)
 		node->cost_b = pos - size_b;

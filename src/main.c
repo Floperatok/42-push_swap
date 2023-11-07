@@ -6,14 +6,31 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:43:53 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/06 13:10:21 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/07 14:18:55 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-// reflechir à mieux nommer les fonction / variables
-// reflechir aux pointeur qu'on envoi dans les fonctions
+void	quick_sort(t_stack **lst_a, t_stack **lst_b)
+{
+	int	size;
+	int	cut;
+
+	size = lstsize(*lst_a);
+	if (size <= 1)
+		return ;
+	else if (size <= 3)
+		return (tiny_sort(lst_a));
+	if (size < 200)
+		cut = 2;
+	else
+		cut = 4;
+	pre_sort(lst_a, lst_b, size, cut);
+	tiny_sort(lst_a);
+	regroup(lst_a, lst_b);
+	final_rotation(lst_a);
+}
 
 int	main(int ac, char **av)
 {

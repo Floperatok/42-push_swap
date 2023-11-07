@@ -6,13 +6,13 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 22:25:12 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/06 00:49:18 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/06 18:07:46 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static int	get_maxindex_pos(t_stack **lst)
+int	get_maxindex_pos(t_stack **lst)
 {
 	t_stack	*tmp;
 	int		max;

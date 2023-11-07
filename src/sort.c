@@ -6,26 +6,29 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:22:29 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/06 13:05:52 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/07 14:14:28 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static void	pre_sort(t_stack **lst_a, t_stack **lst_b, int size, int cut)
+static t_stack	*change_pivot(int *pivot, int size, int cut)
+{
+	*pivot += (size / cut);
+	return (NULL);
+}
+
+void	pre_sort(t_stack **lst_a, t_stack **lst_b, int size, int cut)
 {
 	int		pivot;
 	t_stack	*stop_mark;
 
-	pivot = (int)(size / cut) + 1;
-	stop_mark = NULL;
+	pivot = (size / cut);
+	stop_mark = change_pivot(&pivot, size, cut);
 	while (lstsize(*lst_a) > 3)
 	{
 		if ((stop_mark && *lst_a == stop_mark) && lstsize(*lst_a) > 3)
-		{
-			pivot += (int)(size / cut) + 1;
-			stop_mark = NULL;
-		}
+			stop_mark = change_pivot(&pivot, size, cut);
 		if ((*lst_a)->index > pivot)
 		{
 			if (!stop_mark)
@@ -36,7 +39,11 @@ static void	pre_sort(t_stack **lst_a, t_stack **lst_b, int size, int cut)
 				ra(lst_a);
 		}
 		else
+		{
 			pb(lst_a, lst_b);
+			if (pivot == size && (*lst_b)->index <= pivot - size / (cut * 1.6))
+				rb(lst_b);
+		}
 	}
 }
 
@@ -50,13 +57,12 @@ static int	total_node_cost(t_stack *node)
 
 static void	find_cheapest_move(t_stack **lst, int *costs)
 {
-	int		i;
 	int		min;
 	t_stack	*tmp;
 	int		cost;
 
 	tmp = *lst;
-	min = ft_abs(tmp->cost_a) + ft_abs(tmp->cost_b);
+	min = total_node_cost(tmp);
 	costs[0] = tmp->cost_a;
 	costs[1] = tmp->cost_b;
 	while (tmp)
@@ -69,11 +75,10 @@ static void	find_cheapest_move(t_stack **lst, int *costs)
 			costs[1] = tmp->cost_b;
 		}
 		tmp = tmp->next;
-		i++;
 	}
 }
 
-static void	regroup(t_stack **lst_a, t_stack **lst_b)
+void	regroup(t_stack **lst_a, t_stack **lst_b)
 {
 	int	*costs;
 
@@ -85,19 +90,4 @@ static void	regroup(t_stack **lst_a, t_stack **lst_b)
 		do_moves(lst_a, lst_b, costs);
 	}
 	free(costs);
-}
-
-void	quick_sort(t_stack **lst_a, t_stack **lst_b)
-{
-	int	size;
-
-	size = lstsize(*lst_a);
-	if (size <= 1)
-		return ;
-	else if (size <= 3)
-		return (tiny_sort(lst_a));
-	pre_sort(lst_a, lst_b, size, CUTTING);
-	tiny_sort(lst_a);
-	regroup(lst_a, lst_b);
-	final_rotation(lst_a);
 }
