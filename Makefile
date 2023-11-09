@@ -1,59 +1,75 @@
+####################################################################
+#                            CONFIG                                #
+####################################################################
 
-# Colors
-_GREEN=$'\033[0;32m
-
-# Compilation
 CC			=	cc
 CFLAGS		=	-Wall -Werror -Wextra
 NAME		=	push_swap
+NAME_BONUS	=	checker
 
-SRC_PATH	=	src/
+
+####################################################################
+#                            FILES                                 #
+####################################################################
+
+MAIN		=	main.c
+
+SRC			=	initialization.c utils.c utils2.c ft_split.c \
+				list_utils.c push.c swap.c rotate.c \
+				reverse_rotate.c sort_utils.c sort.c target.c \
+				moves.c ft_printf.c ft_printf2.c dev_functions.c \
+				push_swap.c
+
+SRC_BONUS	=	checker.c get_next_line.c get_next_line_utils.c
+
+
+####################################################################
+#                            PATHS                                 #
+####################################################################
+
 OBJ_PATH	=	obj/
+SRC_PATH	=	src/
 
-# Files
-SRC		=	main.c \
-		initialization.c \
-		utils.c \
-		utils2.c \
-		ft_split.c \
-		list_utils.c \
-		operations1.c \
-		operations2.c \
-		operations3.c \
-		sort_utils.c \
-		sort.c \
-		target.c \
-		moves.c \
-		ft_printf.c \
-		ft_printf2.c \
-		dev_functions.c
+SRCS		=	$(addprefix $(SRC_PATH), $(SRC))
+OBJ			=	$(SRC:.c=.o)
+OBJS		=	$(addprefix $(OBJ_PATH), $(OBJ))
 
-SRCS	=	$(addprefix $(SRC_PATH), $(SRC))
-OBJ		=	$(SRC:.c=.o)
-OBJS	=	$(addprefix $(OBJ_PATH), $(OBJ))
-INCS	=	-I ./includes/
+SRCS_BONUS	=	$(addprefix $(SRC_PATH), $(SRC_BONUS))
+OBJ_BONUS	=	$(SRC_BONUS:.c=.o)
+OBJS_BONUS	=	$(addprefix $(OBJ_PATH), $(OBJ_BONUS))
+
+OBJ_MAIN	=	$(MAIN:.c=.o)
+OBJS_MAIN	=	$(addprefix $(OBJ_PATH), $(OBJ_MAIN))
+
+INCS		=	 ./include/
 
 
-all:	$(OBJ_PATH) $(NAME) success
+####################################################################
+#                            RULES                                 #
+####################################################################
 
-$(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	$(CC) $(CFLAGS) -c $< -o $@ $(INCS)
+all:	$(NAME)
 
-$(OBJ_PATH):
-	@mkdir $(OBJ_PATH)
+bonus:	$(NAME_BONUS)
 
-$(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) 
+$(NAME):	$(OBJS) $(OBJS_MAIN)
+	$(CC) $(CFLAGS) -I $(INCS) -o $@ $(OBJS) $(OBJS_MAIN)
+
+$(NAME_BONUS):	$(OBJS) $(OBJS_BONUS)
+	$(CC) $(CFLAGS) -I $(INCS) -o $@ $(OBJS) $(OBJS_BONUS)
+
+$(OBJ_PATH)%.o:	$(SRC_PATH)%.c
+	@mkdir -p $(OBJ_PATH)
+	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCS)
+
+$(OBJ_PATH)%.o:	$(MAIN)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ_PATH)
 
 fclean:	clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(NAME_BONUS)
+
 
 re: fclean all
-
-success:
-	@echo "${_GREEN}+-----------------------------------+"
-	@echo "${_GREEN}|      COMPILATION SUCCESSFUL       |"
-	@echo "${_GREEN}+-----------------------------------+"
