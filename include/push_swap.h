@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:45:45 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/07 14:10:36 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/08 22:25:26 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_list
 
 // Sort functions
 
+void	push_swap(int ac, char **av);
 void	tiny_sort(t_stack **lst_a);
 void	quick_sort(t_stack **lst_a, t_stack **lst_b);
 void	pre_sort(t_stack **lst_a, t_stack **lst_b, int size, int cut);
@@ -49,17 +50,17 @@ void	lstclear(t_stack **lst);
 
 // Operations functions
 
-void	sa(t_stack **lst_a);
-void	sb(t_stack **lst_b);
-void	ss(t_stack **lst_a, t_stack **lst_b);
-void	pa(t_stack **lst_a, t_stack **lst_b);
-void	pb(t_stack **lst_a, t_stack **lst_b);
-void	ra(t_stack **lst_a);
-void	rb(t_stack **lst_b);
-void	rr(t_stack **lst_a, t_stack **lst_b);
-void	rra(t_stack **lst_a);
-void	rrb(t_stack **lst_b);
-void	rrr(t_stack **lst_a, t_stack **lst_b);
+int		sa(t_stack **lst_a);
+int		sb(t_stack **lst_b);
+int		ss(t_stack **lst_a, t_stack **lst_b);
+int		pa(t_stack **lst_a, t_stack **lst_b);
+int		pb(t_stack **lst_a, t_stack **lst_b);
+int		ra(t_stack **lst_a);
+int		rb(t_stack **lst_b);
+int		rr(t_stack **lst_a, t_stack **lst_b);
+int		rra(t_stack **lst_a);
+int		rrb(t_stack **lst_b);
+int		rrr(t_stack **lst_a, t_stack **lst_b);
 
 // Miscellaneous functions
 
@@ -73,6 +74,7 @@ t_stack	*create_stack(int ac, char **av);
 char	*ft_strdup(char *s);
 void	free_tab(char **tab);
 char	**ft_split(char const *s, char c);
+void	ft_print_error(char *str);
 
 // Dev functions
 

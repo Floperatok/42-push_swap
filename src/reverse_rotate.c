@@ -6,14 +6,14 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:34:59 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/04 13:52:35 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/08 21:39:59 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 // Shift all down all the nodes by one, the last node become the first one
-void	rra(t_stack **lst_a)
+int	rra(t_stack **lst_a)
 {
 	t_stack	*node;
 	t_stack	*tmp;
@@ -28,13 +28,13 @@ void	rra(t_stack **lst_a)
 		tmp->next = NULL;
 		lstadd_front(lst_a, node);
 		ft_printf("rra\n");
+		return (1);
 	}
-	else
-		ft_printf("error rra\n");
+	return (0);
 }
 
 // Shift all down all the nodes by one, the last node become the first one
-void	rrb(t_stack **lst_b)
+int	rrb(t_stack **lst_b)
 {
 	t_stack	*node;
 	t_stack	*tmp;
@@ -49,13 +49,13 @@ void	rrb(t_stack **lst_b)
 		tmp->next = NULL;
 		lstadd_front(lst_b, node);
 		ft_printf("rrb\n");
+		return (1);
 	}
-	else
-		ft_printf("error rrb\n");
+	return (0);
 }
 
 // Shift all down all the nodes by one, the last node become the first one
-void	rrr(t_stack **lst_a, t_stack **lst_b)
+int	rrr(t_stack **lst_a, t_stack **lst_b)
 {
 	t_stack	*node;
 	t_stack	*tmp;
@@ -77,7 +77,7 @@ void	rrr(t_stack **lst_a, t_stack **lst_b)
 		tmp->next = NULL;
 		lstadd_front(lst_b, node);
 		ft_printf("rrr\n");
+		return (1);
 	}
-	else
-		ft_printf("error rrr\n");
+	return (0);
 }

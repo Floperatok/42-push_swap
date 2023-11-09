@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 00:43:17 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/06 00:49:47 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/08 22:24:55 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,9 @@ char	*ft_strdup(char *s)
 	}
 	d[i] = '\0';
 	return (d);
+}
+
+void	ft_print_error(char *str)
+{
+	write(2, str, ft_strlen(str));
 }

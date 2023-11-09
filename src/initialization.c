@@ -6,7 +6,7 @@
 /*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:03:29 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/04 13:51:46 by nsalles          ###   ########.fr       */
+/*   Updated: 2023/11/09 08:23:33 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ char	**get_args(int ac, char **av)
 	return (args);
 }
 
+// Check if there is non numeric characters or wrong minus sign in args
 int	check_carac(char **args)
 {
 	int	i;
@@ -88,6 +89,7 @@ int	check_carac(char **args)
 	return (0);
 }
 
+// Check if there is any error in av, returns 1 if error is found, 0 otherwise
 int	check_errors(int ac, char **av)
 {
 	char	**args;
@@ -108,7 +110,7 @@ int	check_errors(int ac, char **av)
 	{
 		int_args[i] = ft_atoi(args[i]);
 		if (int_args[i] > INT_MAX || int_args[i] < INT_MIN)
-			return (free(int_args), free_tab(args), 2);
+			return (free(int_args), free_tab(args), 1);
 		j = -1;
 		while (++j < i)
 			if (int_args[i] == int_args[j])
@@ -117,6 +119,7 @@ int	check_errors(int ac, char **av)
 	return (free(int_args), free_tab(args), 0);
 }
 
+// Create the stack a and assign it's indexes
 t_stack	*create_stack(int ac, char **av)
 {
 	t_stack	*stack;
@@ -135,7 +138,7 @@ t_stack	*create_stack(int ac, char **av)
 	{
 		tmp = lstnew(ft_atoi(args[i]));
 		if (!tmp)
-			return (free_tab(args), NULL);
+			return (lstclear(&stack), free_tab(args), NULL);
 		lstadd_back(&stack, tmp);
 	}
 	free_tab(args);
