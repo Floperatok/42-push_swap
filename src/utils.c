@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nsalles <nsalles@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 15:22:45 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/07 14:20:00 by nsalles          ###   ########.fr       */
+/*   Updated: 2024/02/13 18:35:29 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+/*
+ *	Returns the size of the string.
+*/
 int	ft_strlen(char *str)
 {
 	int	i;
@@ -22,7 +25,9 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-// Return the len of the NULL terminated char ** tab
+/*
+ *	Returns the size of the NULL terminated array of strings.
+*/
 int	ft_tablen(char **tab)
 {
 	int	i;
@@ -33,6 +38,9 @@ int	ft_tablen(char **tab)
 	return (i);
 }
 
+/*
+ *	Returns the absolute value of n.
+*/
 int	ft_abs(int n)
 {
 	if (n < 0)
@@ -40,6 +48,9 @@ int	ft_abs(int n)
 	return (n);
 }
 
+/*
+ *	Returns the maximum value between a and b. 
+*/
 int	ft_max(int a, int b)
 {
 	if (a > b)
@@ -49,7 +60,9 @@ int	ft_max(int a, int b)
 	return (a);
 }
 
-// Free the null terminated char ** tab
+/*
+ *	Free the array of strings.
+*/
 void	free_tab(char **tab)
 {
 	int	i;

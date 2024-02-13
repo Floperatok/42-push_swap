@@ -3,21 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nsalles <nsalles@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:22:29 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/07 18:18:44 by nsalles          ###   ########.fr       */
+/*   Updated: 2024/02/13 18:08:14 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+/*
+ *	Reset the pivot for the presort.
+*/
 static t_stack	*change_pivot(int *pivot, int size, int cut)
 {
 	*pivot += (size / cut);
 	return (NULL);
 }
 
+/*
+ *	First step of the algorithm. Send all the nodes to the stack b, pre-sorting
+ *	them at the same time by keeping the smallest ones in the center of the pile.
+*/
 void	pre_sort(t_stack **lst_a, t_stack **lst_b, int size, int cut)
 {
 	int		pivot;
@@ -47,6 +54,10 @@ void	pre_sort(t_stack **lst_a, t_stack **lst_b, int size, int cut)
 	}
 }
 
+/*
+ *	Returns the total cost for sorting the node from the stack b in the stack a,
+ *	knowing that double rotation (rr and rrr) can be performed.
+*/
 static int	total_node_cost(t_stack *node)
 {
 	if ((node->cost_a > 0 && node->cost_b > 0) || \
@@ -55,6 +66,11 @@ static int	total_node_cost(t_stack *node)
 	return (ft_abs(node->cost_a) + ft_abs(node->cost_b));
 }
 
+/*
+ *	Search for the cheapest cost of moves to sort a nove ob the stack b
+ *	in the stack a.
+ *	Once found, fill costs[2] with the rotation required in the stack a and b.
+*/
 static void	find_cheapest_move(t_stack **lst, int *costs)
 {
 	int		min;
@@ -78,6 +94,12 @@ static void	find_cheapest_move(t_stack **lst, int *costs)
 	}
 }
 
+/*
+ *	Second step of the algorithm. Finds the cheapest cost for sort a node of
+ *	the stack b in the stack a.
+ *	Execute the moves.
+ *	Repeat until there is no node left in b.
+*/
 void	regroup(t_stack **lst_a, t_stack **lst_b)
 {
 	int	*costs;

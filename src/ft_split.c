@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nsalles <nsalles@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 13:32:35 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/03 18:16:04 by nsalles          ###   ########.fr       */
+/*   Updated: 2024/02/13 17:06:12 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,20 @@ static void	free_split(char **tab, int i)
 	free(tab);
 }
 
+/*
+ *	Splits the string s according to the delimiter c into an array of strings.
+ *	Each string of the array and the array are null-terminated.
+ *	Memory for the new strings and the array is obtained with malloc(3), and can
+ *	be freed with free(3).
+ * 	ARGUMENT:
+ * 		char const *s	: The string to split.
+ * 		char c			: The delimiter.
+ * 	RETURN VALUE:
+ * 		char **	: Null-terminated array of null-terminated strings
+ * 		Ft_split works as follow: 
+ * 			ft_split("Hello world", ' ') returns {"Hello\0", "world\n", NULL}.
+ * 		Note that the delimiter is not kept in the final result.
+*/
 char	**ft_split(char const *s, char c)
 {
 	char	**res;

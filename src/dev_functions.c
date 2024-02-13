@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   dev_functions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nsalles <nsalles@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 05:34:12 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/06 17:09:26 by nsalles          ###   ########.fr       */
+/*   Updated: 2024/02/13 17:02:56 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-// Print the content of the lists
+/*
+ *	Print the content of the stacks
+*/
 void	lstprint(t_stack **lst_a, t_stack **lst_b)
 {
 	t_stack	*tmp_a;

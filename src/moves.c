@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nsalles <nsalles@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 16:36:02 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/07 13:43:39 by nsalles          ###   ########.fr       */
+/*   Updated: 2024/02/13 17:48:57 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+/*
+ *	Shift up all elements of stack a by 1. 
+ *	The first element becomes the last one.
+*/
 static void	rotate_a(t_stack **lst_a, int cost)
 {
 	while (cost > 0)
@@ -26,6 +30,10 @@ static void	rotate_a(t_stack **lst_a, int cost)
 	}
 }
 
+/*
+ *	Shift up all elements of stack b by 1. 
+ *	The first element becomes the last one.
+*/
 static void	rotate_b(t_stack **lst_b, int cost)
 {
 	while (cost > 0)
@@ -40,6 +48,9 @@ static void	rotate_b(t_stack **lst_b, int cost)
 	}
 }
 
+/*
+ *	Rotate the stacks a and b costs[0] and costs[1] times.
+*/
 void	do_moves(t_stack **lst_a, t_stack **lst_b, int *costs)
 {
 	while (costs[0] > 0 && costs[1] > 0)
@@ -59,6 +70,9 @@ void	do_moves(t_stack **lst_a, t_stack **lst_b, int *costs)
 	pa(lst_a, lst_b);
 }
 
+/*
+ *	Rotate the stack a until it's correctly placed.
+*/
 void	final_rotation(t_stack **lst_a)
 {
 	int	size;

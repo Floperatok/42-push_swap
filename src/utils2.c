@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nsalles <nsalles@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 00:43:17 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/08 22:24:55 by nsalles          ###   ########.fr       */
+/*   Updated: 2024/02/13 18:38:43 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-// Convert a string to an int, if max or min int is depassed returns maxint+1
+/*
+ *	Convert a string to an int, if max or min int is depassed returns maxint+1.
+*/
 long	ft_atoi(char *nptr)
 {
 	int		i;
@@ -36,6 +38,16 @@ long	ft_atoi(char *nptr)
 	return (result * sign);
 }
 
+/*
+ *	Returns a pointer to a new string which is a duplicate of the string.
+ *	Memory for the new string is obtained with malloc(3), and can be freed with
+ * 	free(3).
+ * 	ARGUMENTS:
+ * 		const char *s	: The string to copie.
+ * 	RETURN VALUE:
+ * 		char *	: On success, this function returns a pointer to the duplicated
+ * 		string. It returns NULL if insufficient memory was available.
+*/
 char	*ft_strdup(char *s)
 {
 	char	*d;
@@ -54,6 +66,9 @@ char	*ft_strdup(char *s)
 	return (d);
 }
 
+/*
+ *	Prints str in the standard error stream.
+*/
 void	ft_print_error(char *str)
 {
 	write(2, str, ft_strlen(str));

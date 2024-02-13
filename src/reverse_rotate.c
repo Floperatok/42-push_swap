@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations3.c                                      :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nsalles <nsalles@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:34:59 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/08 21:39:59 by nsalles          ###   ########.fr       */
+/*   Updated: 2024/02/13 17:52:26 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-// Shift all down all the nodes by one, the last node become the first one
+/*
+ *	Shift down all elements of stack a by 1.
+ *	The last element becomes the first one.
+*/
 int	rra(t_stack **lst_a)
 {
 	t_stack	*node;
@@ -32,8 +35,10 @@ int	rra(t_stack **lst_a)
 	}
 	return (0);
 }
-
-// Shift all down all the nodes by one, the last node become the first one
+/*
+ *	Shift down all elements of stack b by 1.
+ *	The last element becomes the first one.
+*/
 int	rrb(t_stack **lst_b)
 {
 	t_stack	*node;
@@ -54,7 +59,9 @@ int	rrb(t_stack **lst_b)
 	return (0);
 }
 
-// Shift all down all the nodes by one, the last node become the first one
+/*
+ *	rra and rrb at the same time.
+*/
 int	rrr(t_stack **lst_a, t_stack **lst_b)
 {
 	t_stack	*node;

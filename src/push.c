@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nsalles <nsalles@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 08:15:04 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/09 08:24:15 by nsalles          ###   ########.fr       */
+/*   Updated: 2024/02/13 17:51:18 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-// Push from b to a
+/*
+ *	Swap the first 2 elements at the top of stack a.
+ *	Do nothing if there is only one or no elements.
+*/
 int	pa(t_stack **lst_a, t_stack **lst_b)
 {
 	t_stack	*tmp;
@@ -28,7 +31,10 @@ int	pa(t_stack **lst_a, t_stack **lst_b)
 	return (0);
 }
 
-// Push from a to b
+/*
+ *	Swap the first 2 elements at the top of stack b.
+ *	Do nothing if there is only one or no elements.
+*/
 int	pb(t_stack **lst_a, t_stack **lst_b)
 {
 	t_stack	*tmp;

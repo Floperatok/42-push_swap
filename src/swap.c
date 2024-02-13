@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations1.c                                      :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nsalles <nsalles@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 16:23:32 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/09 08:15:45 by nsalles          ###   ########.fr       */
+/*   Updated: 2024/02/13 18:09:18 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-// Exchange the two firts elements of a
+/*
+ *	Swap the first 2 elements at the top of stack a.
+ *	Do nothing if there is only one or no elements.
+*/
 int	sa(t_stack **lst_a)
 {
 	t_stack	*tmp;
@@ -31,7 +34,10 @@ int	sa(t_stack **lst_a)
 	return (0);
 }
 
-// Exchange the two firts elements of b
+/*
+ *	Swap the first 2 elements at the top of stack b.
+ *	Do nothing if there is only one or no elements.
+*/
 int	sb(t_stack **lst_b)
 {
 	t_stack	*tmp;
@@ -50,7 +56,9 @@ int	sb(t_stack **lst_b)
 	return (0);
 }
 
-// Exchange the two firts elements of a and b
+/*
+ *	sa and sb at the same time.
+*/
 int	ss(t_stack **lst_a, t_stack **lst_b)
 {
 	t_stack	*tmp;

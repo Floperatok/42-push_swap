@@ -3,16 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   target.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nsalles <nsalles@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 22:25:12 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/06 18:07:46 by nsalles          ###   ########.fr       */
+/*   Updated: 2024/02/13 18:33:14 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	get_maxindex_pos(t_stack **lst)
+/*
+ *	Same as get_target_pos but in the case where the index is higher than
+ *	all the indexes in the stack a.
+*/
+static int	get_maxindex_pos(t_stack **lst)
 {
 	t_stack	*tmp;
 	int		max;
@@ -36,6 +40,10 @@ int	get_maxindex_pos(t_stack **lst)
 	return (pos + 1);
 }
 
+/*
+ *	Returns the position of in th stack a where the index must be to 
+ *	be sorted.
+*/
 int	get_target_pos(int index, t_stack **lst_a)
 {
 	t_stack	*tmp;

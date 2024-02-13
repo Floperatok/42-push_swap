@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nsalles <nsalles@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:58:37 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/09 08:28:28 by nsalles          ###   ########.fr       */
+/*   Updated: 2024/02/13 17:50:40 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+/*
+ *	Main function of sorting for push_swap.
+*/
 void	quick_sort(t_stack **lst_a, t_stack **lst_b)
 {
 	int	size;

@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nsalles <nsalles@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:51:52 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/07 13:43:23 by nsalles          ###   ########.fr       */
+/*   Updated: 2024/02/13 17:57:16 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-// Check if the chained list following the node is sorted by ascending order
+/*
+ *	Check if the linked list following the node is sorted by ascending order
+*/
 int	lstissorted(t_stack *node)
 {
 	if (!node)
@@ -26,6 +28,9 @@ int	lstissorted(t_stack *node)
 	return (1);
 }
 
+/*
+ *	Returns the position of the highest node in the linked list.
+*/
 static int	find_highest_pos(t_stack *node)
 {
 	int	highest;
@@ -48,7 +53,9 @@ static int	find_highest_pos(t_stack *node)
 	return (pos);
 }
 
-// Sort in less than three step the chained list of size 3 or below
+/*
+ *	Sort in less than three step the chained list of size 3 or below
+*/
 void	tiny_sort(t_stack **lst_a)
 {
 	int	size;
@@ -77,7 +84,9 @@ void	tiny_sort(t_stack **lst_a)
 	}
 }
 
-// Compute the number of moves b needed to perfectly store the node in a
+/*
+ *	Compute the number of moves b needed to perfectly store the node in a
+*/
 static void	compute_cost(t_stack *node, int pos, int size_b, t_stack **lst_a)
 {
 	int	size_a;
@@ -95,7 +104,9 @@ static void	compute_cost(t_stack *node, int pos, int size_b, t_stack **lst_a)
 		node->cost_a = target_pos;
 }
 
-// Compute the number of moves of all the nodes in b
+/*
+ *	Compute the number of moves of all the nodes in b
+*/
 void	compute_all_costs(t_stack **lst_a, t_stack **lst_b)
 {
 	t_stack	*tmp;

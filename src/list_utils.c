@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nsalles <nsalles@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:08:00 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/06 00:57:20 by nsalles          ###   ########.fr       */
+/*   Updated: 2024/02/13 17:10:58 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-// Add a node to the front of the chained list
+/*
+ *	Add a node to the front of the chained list
+*/
 void	lstadd_front(t_stack **lst, t_stack *new)
 {
 	if (!new || !lst)
@@ -21,7 +23,9 @@ void	lstadd_front(t_stack **lst, t_stack *new)
 	*lst = new;
 }
 
-// Add a node to the back of the chained list
+/*
+ *	Add a node to the back of the chained list
+*/
 void	lstadd_back(t_stack **lst, t_stack *new)
 {
 	t_stack	*tmp;
@@ -40,7 +44,9 @@ void	lstadd_back(t_stack **lst, t_stack *new)
 	tmp->next = new;
 }
 
-// Create a new node
+/*
+ *	Create a new node
+*/
 t_stack	*lstnew(int content)
 {
 	t_stack	*new;
@@ -56,7 +62,9 @@ t_stack	*lstnew(int content)
 	return (new);
 }
 
-// Clear and free all the chained list
+/*
+ *	Clear and free all the chained list
+*/
 void	lstclear(t_stack **lst)
 {
 	t_stack	*tmp;
@@ -73,7 +81,9 @@ void	lstclear(t_stack **lst)
 	lst = NULL;
 }
 
-// Return the size of the chained list following the node
+/*
+ *	Return the size of the chained list following the node
+*/
 int	lstsize(t_stack *node)
 {
 	int	i;

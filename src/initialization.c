@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   initialization.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nsalles <nsalles@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:03:29 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/09 08:23:33 by nsalles          ###   ########.fr       */
+/*   Updated: 2024/02/13 17:09:52 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-// Gives following index in size order to the list, convenient for sorting 
+/*
+ *	Gives following index in size order to the list, convenient for sorting
+*/
 static void	assign_index(t_stack **lst, int size)
 {
 	int		max;
@@ -42,6 +44,9 @@ static void	assign_index(t_stack **lst, int size)
 	}
 }
 
+/*
+ *	Format the arguments of push_swap into an array of strings.
+*/
 char	**get_args(int ac, char **av)
 {
 	char	**args;
@@ -65,7 +70,9 @@ char	**get_args(int ac, char **av)
 	return (args);
 }
 
-// Check if there is non numeric characters or wrong minus sign in args
+/*
+ *	Check if there is non numeric characters or wrong minus sign in args
+*/
 int	check_carac(char **args)
 {
 	int	i;
@@ -89,7 +96,9 @@ int	check_carac(char **args)
 	return (0);
 }
 
-// Check if there is any error in av, returns 1 if error is found, 0 otherwise
+/*
+ *	Check if there is any error in av, returns 1 if error is found, 0 otherwise
+*/
 int	check_errors(int ac, char **av)
 {
 	char	**args;
@@ -119,7 +128,9 @@ int	check_errors(int ac, char **av)
 	return (free(int_args), free_tab(args), 0);
 }
 
-// Create the stack a and assign it's indexes
+/*
+ *	Create the stack a and assign it's indexes
+*/
 t_stack	*create_stack(int ac, char **av)
 {
 	t_stack	*stack;

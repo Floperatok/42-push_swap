@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nsalles <nsalles@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 19:43:48 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/06 00:47:33 by nsalles          ###   ########.fr       */
+/*   Updated: 2024/02/13 17:04:41 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
+/*
+ *	Format and print unsigned int into stdout.
+*/
 int	ft_putunbr(unsigned int n)
 {
 	int	i;
@@ -27,6 +30,9 @@ int	ft_putunbr(unsigned int n)
 	return (i);
 }
 
+/*
+ *	Convert unsigned int into hexa lowercase and print it into stdout.
+*/
 int	ft_putlohexa(unsigned int n)
 {
 	int		i;
@@ -47,6 +53,9 @@ int	ft_putlohexa(unsigned int n)
 	return (i);
 }
 
+/*
+ *	Convert unsigned int into hexa lowercase and print it into stdout.
+*/
 int	ft_putuphexa(unsigned int n)
 {
 	int		i;
@@ -87,6 +96,9 @@ int	ft_putptr2(unsigned long long n)
 	return (i);
 }
 
+/*
+ *	Format and print pointer into stdout.
+*/
 int	ft_putptr(unsigned long long n)
 {
 	int	len;
