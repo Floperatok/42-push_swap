@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsalles <nsalles@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nsalles <nsalles@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:45:45 by nsalles           #+#    #+#             */
-/*   Updated: 2023/11/08 22:25:26 by nsalles          ###   ########.fr       */
+/*   Updated: 2024/02/22 17:49:07 by nsalles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	pre_sort(t_stack **lst_a, t_stack **lst_b, int size, int cut);
 void	regroup(t_stack **lst_a, t_stack **lst_b);
 void	compute_all_costs(t_stack **lst_a, t_stack **lst_b);
 int		get_target_pos(int index, t_stack **lst_a);
-int		get_maxindex_pos(t_stack **lst);
 void	do_moves(t_stack **lst_a, t_stack **lst_b, int *costs);
 void	final_rotation(t_stack **lst_a);
 
